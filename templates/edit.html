@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h1>Edit Profile</h1>
+<form method="POST">
+  <div>
+    <label for="first_name">First name</label>
+    <input type="text" name="first_name" id="first_name" value="{{user.first_name}}">
+  </div>
+  <div>
+    <label for="last_name">Last name</label>
+    <input type="text" name="last_name" id="last_name" value="{{user.last_name}}">
+  </div>
+  <div>
+    <label for="image_url">Image URL</label>
+    <input type="text" name="image_url" id="image_url" value="{{user.image_url}}">
+  </div>
+  <button type="submit" class="btn btn-success">Edit</button>
+  <a class="btn btn-outline-dark"href="/"><i class=" fa fa-caret-left"></i> Back</a>
+</form>
+
+{% endblock %}

@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+
 def connect_db(app):
     """Connect to database."""
     db.app = app
@@ -22,8 +23,10 @@ class User(db.Model):
     last_name = db.Column(db.TEXT,
                     nullable=False,
                     unique=True)
-    image_url = db.Column(db.TEXT,
-                    nullable=False)
+    image_url = db.Column(db.TEXT, 
+                    nullable=False,
+                    unique=False,
+                    default= "/static/profile.jpg")
 
     @property
     def full_name(self):
