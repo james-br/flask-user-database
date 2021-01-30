@@ -14,5 +14,13 @@
     <button class="btn btn-danger" formaction="/users/{{user.id}}/delete" formmethod="POST">Delete</button>
     <a class="btn btn-outline-dark" href="/"><i class=" fa fa-caret-left"></i> Back</a>
   </form>
-    
+  <h2>Post</h2>
+  <ul>
+    {% for post in user.posts %}
+    <li>
+      <a href="/posts/{{post.id}}">{{post.title}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  <p><a href="/users/{{ user.id }}/posts/new" class="btn btn-primary">Add Post</a></p>
 {% endblock %}
